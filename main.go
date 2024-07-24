@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os/exec"
 	"strings"
 )
@@ -16,7 +15,7 @@ func main() {
 	// Run the command and capture the output
 	output, err := cmd.Output()
 	if err != nil {
-		log.Fatal("Error outputting command: ", err)
+		fmt.Println("Error outputting command: ", err)
 		return
 	}
 
