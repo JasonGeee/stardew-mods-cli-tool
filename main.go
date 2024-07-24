@@ -13,7 +13,7 @@ func main() {
 	cmd := exec.Command("powershell", "-Command", psCommand)
 
 	// Run the command and capture the output
-	output, err := cmd.Output()
+	output, err := cmd.CombinedOutput()
 	if err != nil {
 		fmt.Println("Error outputting command: ", err)
 		return
@@ -23,5 +23,5 @@ func main() {
 	result := strings.TrimSpace(string(output))
 
 	// Print the result
-	fmt.Println("Found directory path:", result)
+	defer fmt.Println("Found directory path:", result)
 }
